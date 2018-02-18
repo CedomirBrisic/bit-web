@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+}
+header {
+
+    text-align: center;
+    color: azure;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.mainTitle {
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 200%;
+}
+.readMore {
+    width: 25%;
+    height: 12%;
+    position: absolute;
+    bottom: 15%;
+    left: 38%;
+    color: whitesmoke;
+    background-color: rgb(39, 97, 145);
+    border-radius: 25px;
+}
+.buildEstate {
+    display: inline-block;
+   /* margin-left: 33%;*/
+    width: 90%;
+}
+.buildEstate>h2{
+    color: slategrey;
+    font-size: 150%;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buildEstate>h2>span {
+    border-left: 3px solid slategray ;
+    border-bottom: 3px solid slategray ;
+    border-top: 3px solid slategray ;
+    padding: 5px;
+    color: orange;
+    
+}
+.linkList {
+    list-style-type: none;
+    width: 90%;
+    background-color: rgb(134, 187, 230);
+    margin: 0 auto 21%;
+    font-weight: bold;
+    color: whitesmoke;
+}
+.linkList>li {
+    width: 33%;
+    margin: 2% auto;
+    padding: 1%;
+}
+
+.linkList>.list1 {
+    padding-top: 4%;
+}
+.linkList>.list2 {
+    padding-bottom: 4%;
+}
+
+.subtitle {
+    display: inline-block;
+    width: 48%;
+    margin-left: 25%;
+}
+.about>.subtitle>h2{
+    margin-left: 14%;
+}
+
+.diamond {
+    width: 30px;
+    vertical-align: middle;
+
+}
+hr {
+    display: inline-block;
+    width: 10%;
+}
+.diamondLine {
+    width: 33%;
+    margin: 0 auto;
+}
+article {
+    width: 80%;
+    margin: auto;
+}
+h3 {
+    color: rgb(39, 97, 145);
+    margin: 4% 0;
+    font-size: 150%;
+}
+q {
+    line-height: 30px;
+    font-size: 120%;
+}
+article>ul {
+    margin-top: 20px;
+    list-style-image: url("../images/arrow_bullet.png");
+}
+article>ul>li {
+    margin-bottom: 30px;
+}
+.building{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+.subtitle>hr {
+    width: 100%;
+}
+
+.pictureArticle{
+    background-color: rgb(136, 200, 253);
+    width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.williamson{
+    margin-top: 60px;
+}
+.pictureArticle>img{
+    height: 80px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 8% 5% 2% 2%;
+    border: 2px solid whitesmoke;
+    padding: 2px;
+}
+.stars {
+    display: inline-block;
+    vertical-align: 40px;
+}
+.stars>h4{
+    margin-bottom: 5px;
+}
+.fa {
+    color: whitesmoke;
+}
+
+.pictureArticle>p{
+    padding: 0 4% 8% 4%;
+    color: white;
+    line-height: 30px;
+    font-size: 120%;
+    text-align: justify;
+}
+
+.gomez{
+    margin-bottom: 80px;
+}
+.contact {
+    background-color: rgb(120, 224, 120);
+    min-height: 250px;
+    color: white;
+}
+.contact>p{
+    font-size: 120%;
+}
+.contact>h5 {
+    box-sizing: content-box;
+    font-size: 150%;
+    color: white;
+    padding-top: 30px;
+    width: 33%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.connect{
+    background-color: rgb(236, 32, 110);
+    margin-bottom: 0;
+}
+
+.address{
+    background-color: dodgerblue;
+}
+
+.contactContact{
+    margin-top: 50px;
+}
+.contactContact>img{
+    display: inline-block;
+    float: left;
+
+}
+.contactContact>p{
+    display: inline-block;
+    width: 50%;
+}
+.phone{
+    width: 50%;
+    margin: auto;
+}
+.mail{
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+.phone>p{
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: 50%;
+}
+.mail>p{
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: 50%;
+}
+.connect>ul>li>img{
+    width: 50px;
+}
+.connect>ul{
+    list-style: none;
+    margin: auto;
+}
+.connect>ul>li{
+    display: inline-block;
+    float: left;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.address{
+    text-align: center;
+    min-height: 150px;
+    margin-top: 0;
+}
+.house{
+    background-color: rgb(118, 177, 236);
+}
+.house>img{
+    display: inline-block;
+    width: 50%;
+    margin-left: 25%;
+}
+.mailUs>h2{
+    text-align: center;
+}
+form{
+    margin-left: 5%;
+    margin-top: 50px;
+    font-size: 200%;
+}
+input{
+    display: block;
+    width: 90%;
+    height: 50px;
+    margin-bottom: 30px;
+}
+textarea{
+    display: block;
+    width: 90%;
+}
+.submit{
+    background-color: orange;
+    color: white;
+    width: 150px;
+    height: 50px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    font-size: 100%;
+    border-radius: 10px;
+}
+footer{
+    background-color: rgb(31, 29, 29);
+    color: white;
+    font-size: 120%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+footer>ul{
+    list-style-type: none;
+
+}
+footer>ul>li{
+    display: inline;
+    margin-left: 5px;
+}
+footer>p{
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 30px;
+}
