@@ -8,7 +8,9 @@ main {
     width: 100%;
 }
 header {
-
+    min-height: 200px;
+    background-image: url("../images/banner3.jpg");
+    background-size: cover;
     text-align: center;
     color: azure;
     font-family: 'Times New Roman', Times, serif;
@@ -16,25 +18,27 @@ header {
 
 
 .mainTitle {
-    position: absolute;
-    top: 25%;
+   /* position: absolute;*/
+    /* top: 25%; */
+    padding-top: 10%;
     text-align: center;
     color: whitesmoke;
-    font-size: 200%;
+    font-size: 150%;
 }
 .readMore {
-    width: 25%;
-    height: 12%;
-    position: absolute;
-    bottom: 15%;
-    left: 38%;
+    /* width: 25%; */
+    /* height: 12%; */
+   /* position: absolute;*/
+    /* bottom: 15%; */
+    /* left: 38%; */
     color: whitesmoke;
     background-color: rgb(39, 97, 145);
     border-radius: 25px;
+    margin-top: 5%;
 }
 .buildEstate {
     display: inline-block;
-   /* margin-left: 33%;*/
+   margin: 0 auto 0 auto;
     width: 90%;
 }
 .buildEstate>h2{
@@ -229,6 +233,7 @@ article>ul>li {
 .connect>ul{
     list-style: none;
     margin: auto;
+    overflow: auto;
 }
 .connect>ul>li{
     display: inline-block;
@@ -296,4 +301,68 @@ footer>p{
     display: inline-block;
     margin-left: 15%;
     margin-top: 30px;
+}
+
+@media (min-width: 768px){
+
+    .buildEstate {
+        position: fixed;
+        top: 0px;
+        margin-top: 0;
+
+    }
+
+    .linkList {
+        margin: 0;
+        width:60%;
+        background-color: rgba(134, 187, 230, 0);
+        /* color: white; */
+
+    }
+
+    .buildEstate.linklist>ul>li{
+        float: left;
+        width: 2%;
+        margin: 2%;
+
+    }
+    .buildEstate>h2 {
+        float: left;
+    }
+
+    .about{
+        width:95%;
+        margin: auto;
+    }
+
+    .about>.article1{
+        float: left;
+        width: 49%;
+
+    }
+    .about>img{
+        width:49%;
+    }
+    .about>article{
+        float: left;
+        width: 100%;
+
+}
+.pictureArticlesDiv{
+    width:95%;
+    margin: 40px auto;
+}
+
+.pictureArticle {
+    width: 45%;
+    float: left;
+}
+.williamson {
+    width: 45%;
+    margin-top: 0;
+    margin-right: 10%;
+}
+.gomez{
+    margin-bottom: 50px;
+}
 }

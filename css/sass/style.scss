@@ -1,0 +1,10 @@
+$font: Arial, Helvetica, sans-serif;
+$background: url("./abstract-background.jpg");
+$color: white;
+$a150: 150%;
+p {
+    font-family: $font;
+    background-image: $background;
+    color: $color;
+    font-size: $a150;
+}

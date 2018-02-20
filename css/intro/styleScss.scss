@@ -1,0 +1,20 @@
+$color: whitesmoke;
+$color1: steelblue;
+$fontTimes: "Times New Roman";
+$mainWidth: 50%;
+$width80: 80%;
+table{
+    background-color: $color1;
+    color: $color;
+    width: $width80;
+}
+.container{
+    width: $mainWidth;
+    margin: 0 auto;
+}
+#footer{
+    width: $mainWidth;
+}
+img{
+    margin-left: 25%;
+}
