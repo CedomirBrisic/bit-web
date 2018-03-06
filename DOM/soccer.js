@@ -8,6 +8,7 @@ teren.addEventListener("click", klik);
 teren.addEventListener("keypress", goal);
 
 var vertical = 0;
+var horizontal = 0;
 
 function klik(event) {
     var horizontal = event.clientX - width/2;
@@ -17,7 +18,9 @@ function klik(event) {
 }
 
 function goal(event){
+    var h = 1820 - horizontal;
     lopta.style.position = "fixed";
-    lopta.style.right = "60px";
+    lopta.style.left = h +"px";
     lopta.style.top = vertical + "px";
+    lopta.style.transition = "left 5s";
 }
