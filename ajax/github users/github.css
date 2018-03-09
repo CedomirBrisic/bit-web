@@ -24,3 +24,14 @@ input {
     margin-left: 10px;
     margin-right: 10px;
 }
+img{
+    width: 100%;
+}
+p{
+    width: 30%;
+}
+section{
+    width: 30%;
+    display: inline-block;
+
+}

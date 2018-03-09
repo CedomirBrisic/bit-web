@@ -1,9 +1,11 @@
 $button = $("#searchButton");
+
 $button.on("click", getUser);
 
 // $searchInput = $searchInputNode.toString();
 
-function getUser() {
+function getUser(event) {
+    event.preventDefault();
     $searchInput = $("#searchInput").val();
     var input = String($searchInput);
     var requestData = `"https://api.github.com/search/users?q=${input}"`
