@@ -19,14 +19,14 @@ const uiModule = (($) => {
         } = show
 
         return `
-            <div class="card col-4">
-            <a href="selectedShow.html" data-show-id="${id}">
-                <img class="card-img-top" src="${imgMedium}" alt="Card image cap">
-                <div class="card-body">
-                        <h5 class="card-title">${title}</h5>
-                    </a>
-                </div>
-            </div>   `
+        <div class="card col-4">
+         <a href="selectedShow.html" class="show" data-show-id="${id}">
+            <img class="card-img-top" src="${imgMedium}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+            </div>
+        </a>
+    </div>`
     };
 
 

@@ -14,6 +14,8 @@ const ctrlModule = ((dataModule, uiModule) => {
             });
 
         })
+
+        selectSingleShow();
     };
 
     const getShowSeasonUrlRequest = () => {
@@ -22,12 +24,22 @@ const ctrlModule = ((dataModule, uiModule) => {
 
     const selectedShowInit = () => {
 
-        
+
         let request = $.ajax({
 
         })
     }
-    
+
+    const selectSingleShow = () => {
+        $(document).on("click", ".show", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const id = $(event.currentTarget).attr('data-show-id');
+            localStorage.setItem("showId", id);
+
+            window.location.href = "selectedShow.html";
+        });
+    }
 
     return {
         init
