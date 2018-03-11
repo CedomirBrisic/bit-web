@@ -4,8 +4,12 @@ const dataModule = (() => {
         allShows: "http://api.tvmaze.com/shows",
         // showSeasons: "http://api.tvmaze.com/shows/" + showId + "/seasons",
         // showCast: "http://api.tvmaze.com/shows/" + showId + "/cast",
-
+        
     }
+    
+    let globalId = 0;
+
+    const showList = [];
 
     class Show {
         constructor(id, title, imgMedium, rating) {
@@ -41,12 +45,14 @@ const dataModule = (() => {
     }
 
     const createShows = (id, title, imgMedium, rating) => {
-        return new Show(id, title, imgMedium, rating);
+        const newShow = new Show(id, title, imgMedium, rating);
+        showList.push(newShow);
+        return newShow;
     }
 
-    const createSeason = (num, start, end) => {
-        return new Seasons(num, start, end);
-    }
+    // const createSeason = (num, start, end) => {
+    //     return new Seasons(num, start, end);
+    // }
 
     const createShowDetails = (id, title, imgMedium, rating, imgLarge, summary, seasonsObj, actorsArr) => {
         return new DetailedShow(id, title, imgMedium, rating, imgLarge, summary, seasonsObj, actorsArr);
@@ -54,9 +60,11 @@ const dataModule = (() => {
 
     return {
         constants,
-        createSeason,
+        // createSeason,
         createShows,
-        createShowDetails
+        showList,
+        createShowDetails,
+        globalId
     }
 
 })();

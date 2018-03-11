@@ -8,41 +8,116 @@ const ctrlModule = ((dataModule, uiModule) => {
 
         request.done(function (objectData) {
             objectData.forEach(element => {
-                const show = dataModule.createShows(element.id, element.name, element.image.medium, element.rating.average);
-                const card = uiModule.createCard(show);
-                uiModule.$firstPageCardInputPlace.append(card);
+                dataModule.createShows(element.id, element.name, element.image.medium, element.rating.average);
             });
-
-        })
-
-        selectSingleShow();
-    };
-
-    const getShowSeasonUrlRequest = () => {
+            dataModule.showList.sort(function (a, b) {
+                return parseFloat(b.rating) - parseFloat(a.rating)
+            });
+            $('.firstPageCardInputPlace').hide(500).fadeIn(3000);
+            for (let i = 0; i < 50; i++) {
+                let showToInsert = dataModule.showList[i];
+                let card = uiModule.createCard(showToInsert);
+                uiModule.$firstPageCardInputPlace.append(card);
+            }
+        });
 
     }
 
-    const selectedShowInit = () => {
 
+    const changeGlobalId = (id) => {
+        let input = id.toString();
+        localStorage.setItem("showId", input)
+        window.location.replace("selectedShow.html");
+    }
+
+    const displayShowSeasons = () => {
+        let input = localStorage.getItem("showId");
 
         let request = $.ajax({
+            url: `http://api.tvmaze.com/shows/${input}/seasons`,
+            method: "GET",
+        });
 
+        request.done(function (objectData) {
+            $seasonsNumber = $("<h3>");
+            $seasonsNumber.text(`Seasons: (${objectData.length})`);
+
+            $seasonDeatils = $("<ul>")
+            objectData.forEach(element => {
+                $seasonDates = $("<li>");
+                $seasonDates.text(`${element.premiereDate} to ${element.endDate}`);
+                $seasonDeatils.append($seasonDates);
+
+            })
+
+            uiModule.$selectedShowSeasons.append($seasonsNumber);
+            uiModule.$selectedShowSeasons.append($seasonDeatils);
+
+        })
+
+    }
+
+    const displayShowCast = () => {
+        let input = localStorage.getItem("showId");
+
+        let request = $.ajax({
+            url: `http://api.tvmaze.com/shows/${input}/cast`,
+            method: "GET",
+        });
+
+        request.done(function (objectData) {
+            $title = $("<h3>");
+            $title.text("Cast:");
+
+            $castList = $("<ul>");
+            objectData.forEach(element => {
+                $castName = $("<li>");
+                $castName.text(element.person.name);
+                $castList.append($castName);
+            })
+
+            uiModule.$selectedShowCast.append($title);
+            uiModule.$selectedShowCast.append($castList);
         })
     }
 
-    const selectSingleShow = () => {
-        $(document).on("click", ".show", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const id = $(event.currentTarget).attr('data-show-id');
-            localStorage.setItem("showId", id);
+    const displayTitlePosterAndSummary = () => {
+        let input = localStorage.getItem("showId");
 
-            window.location.href = "selectedShow.html";
+        let request = $.ajax({
+            url: `http://api.tvmaze.com/shows/${input}`,
+            method: "GET",
         });
+
+        request.done(function (objectData) {
+            $title = $("<h1>");
+            $title.attr("style","text-align:center");
+            $title.text(objectData.name);
+            uiModule.$selectedShowTitle.append($title);
+
+            $poster = $("<img>");
+            $poster.attr("src", objectData.image.original);
+            $poster.attr("style","width: 100%")
+            uiModule.$selectedShowImg.append($poster);
+            
+            $summary = uiModule.createSummary(objectData.summary);
+            uiModule.$selectedShowSummary.append($summary);
+        });
+
+    };
+
+
+    const selectedShowInit = () => {
+        displayShowSeasons();
+        displayShowCast();
+        displayTitlePosterAndSummary();
     }
+
 
     return {
-        init
-    }
+        init,
+        changeGlobalId,
+        selectedShowInit,
+    };
 
 })(dataModule, uiModule);
