@@ -13,8 +13,6 @@ const ctrlModule = ((dataModule, uiModule) => {
             dataModule.showList.sort(function (a, b) {
                 return parseFloat(b.rating) - parseFloat(a.rating)
             });
-            // $('.firstPageCardInputPlace').hide(500).fadeIn(3000);
-            let xyz = setInterval(interval, 1000);
             let counter = 0;
             
             const interval = () => {
@@ -26,6 +24,7 @@ const ctrlModule = ((dataModule, uiModule) => {
                     clearInterval(xyz);
                 }
             }
+            let xyz = setInterval(interval, 100);
         });
 
     }
