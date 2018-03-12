@@ -13,11 +13,18 @@ const ctrlModule = ((dataModule, uiModule) => {
             dataModule.showList.sort(function (a, b) {
                 return parseFloat(b.rating) - parseFloat(a.rating)
             });
-            $('.firstPageCardInputPlace').hide(500).fadeIn(3000);
-            for (let i = 0; i < 50; i++) {
-                let showToInsert = dataModule.showList[i];
+            // $('.firstPageCardInputPlace').hide(500).fadeIn(3000);
+            let xyz = setInterval(interval, 1000);
+            let counter = 0;
+            
+            const interval = () => {
+                let showToInsert = dataModule.showList[counter];
                 let card = uiModule.createCard(showToInsert);
                 uiModule.$firstPageCardInputPlace.append(card);
+                counter++
+                if (counter === 5) {
+                    clearInterval(xyz);
+                }
             }
         });
 
